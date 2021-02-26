@@ -13,6 +13,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-google-sheets",
+      options: {
+         spreadsheetId: "1JBGnWte27V1LfuNfIMLht4lflZNt_-kuWwrWITwXrmI",
+         worksheetTitle: "Sheet1",
+         credentials: JSON.parse(`${process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS}`)
+         // credentials: require("./credentials/client_secret.json")
+     }
+   },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
